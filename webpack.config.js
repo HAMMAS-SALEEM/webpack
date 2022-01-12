@@ -5,23 +5,23 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-},
-plugins: [
+  },
+  plugins: [
     new HtmlWebpackPlugin({
-        template: './src/index.html'
+      template: './src/index.html',
     }),
-],
-output: {
+  ],
+  output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-},
-devServer: {
+  },
+  devServer: {
     static: './dist',
-        },
-module: {
+  },
+  module: {
     rules: [{
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-    }, ],
+      test: /\.css$/i,
+      use: ['style-loader', 'css-loader'],
+    }],
   },
 };
